@@ -44,43 +44,43 @@ export default function LayoutSidebar() {
           <MenuItem
             icon={<HomeOutlinedIcon />}
             onClick={() => {
-              console.log("homne");
+              setstate("/home");
             }}
           >
             Home
           </MenuItem>
         </Link>
 
-        <Link to="/team">
+        <Link to="/inbox">
           <MenuItem
             icon={<PeopleOutlinedIcon />}
             onClick={() => {
-              setstate("/team");
+              setstate("/inboxm");
             }}
           >
-            Team
+            Inbox
           </MenuItem>
         </Link>
 
-        <Link to="/contacts">
+        <Link to="/board">
           <MenuItem
             icon={<ContactsOutlinedIcon />}
             onClick={() => {
-              setstate("contacts");
+              setstate("board");
             }}
           >
-            Contacts
+            board
           </MenuItem>
         </Link>
 
-        <Link to="/profile">
+        <Link to="/settings">
           <MenuItem
             icon={<ReceiptOutlinedIcon />}
             onClick={() => {
-              setstate("profile");
+              setstate("settings");
             }}
           >
-            Profile
+            Settings
           </MenuItem>
         </Link>
 
@@ -92,17 +92,6 @@ export default function LayoutSidebar() {
             }}
           >
             FAQ
-          </MenuItem>
-        </Link>
-
-        <Link to="/calendar">
-          <MenuItem
-            icon={<CalendarTodayOutlinedIcon />}
-            onClick={() => {
-              setstate("calendar");
-            }}
-          >
-            Calendar
           </MenuItem>
         </Link>
       </Menu>

@@ -1,12 +1,11 @@
 import "./App.css";
 import LayoutSidebar from "./components/LayoutSidebar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/home";
-import Team from "./pages/Team";
+import Settings from "./pages/Settings";
+import Home from "./pages/Home";
 import Faq from "./pages/Faq";
-import Contacts from "./pages/Contacts";
-import Profile from "./pages/Profile";
-import Calendar from "./pages/Calendar";
+import Inbox from "./pages/Inbox";
+import Board from "./pages/Board";
 function App() {
   return (
     <div id="app" style={({ height: "100vh" }, { display: "flex" })}>
@@ -17,11 +16,10 @@ function App() {
         </main>
         <Routes>
           <Route path="/home" element={<Home />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/contacts" element={<Contacts />} />
-          <Route path="/profile" component={<Profile />} />
+          <Route path="/Inbox" element={<Inbox />} />
+          <Route path="/board" component={<Board />} />
+          <Route path="/settings" element={<Settings />} />
           <Route path="/faq" element={<Faq />} />
-          <Route path="/calendar" element={<Calendar />} />
         </Routes>
       </Router>
     </div>

@@ -1,13 +1,7 @@
 import React from "react";
+import "@coreui/coreui/dist/css/coreui.min.css";
+import ReportCard from "../components/ReportCard";
 
 export default function Home() {
-  return (
-    <div>
-      <p>
-        home Enim ex deserunt et enim veniam sint consectetur ipsum proident
-        incididunt duis. Velit elit ut do ea officia culpa incididunt. Sunt
-        excepteur mollit do sint.
-      </p>
-    </div>
-  );
+  return <ReportCard />;
 }
