@@ -4,6 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
+import logo from "../assets/thislogo.png";
 
 export default function ReportCard() {
   return (
@@ -11,25 +12,26 @@ export default function ReportCard() {
       <CardActionArea>
         <CardMedia
           component="img"
-          height="140"
-          image="../assets/thislogo.png"
+          height="100"
+          image={logo}
           alt="green iguana"
         />
+        \{" "}
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Lizard
+            PH
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, sed!
+            Quisquam nobis esse impedit culpa!
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
+      {/* <CardActions>
         <Button size="small" color="primary">
           Share
         </Button>
-      </CardActions>
+      </CardActions> */}
     </Card>
   );
 }

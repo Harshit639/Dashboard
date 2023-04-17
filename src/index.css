@@ -6,16 +6,35 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
-
+  overflow: hidden;
+  padding-right: 3rem;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
+.container{
+  width: 100%;
+}
 
 .logo{
   height: 2.5rem;
   margin-top: 10px;
 }
+
+
+.navouter{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 2rem;
+}
+
+.containerhome{
+  display: flex;
+  justify-content: space-around;
+}
+
