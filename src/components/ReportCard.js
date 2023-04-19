@@ -5,25 +5,32 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import logo from "../assets/thislogo.png";
-
-export default function ReportCard() {
+import temp from "../assets/thermometer.png";
+export default function ReportCard({ name, val, img, col }) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card
+      sx={{
+        maxWidth: 300,
+        minWidth: 300,
+        minHeight: 200,
+        backgroundColor: col,
+      }}
+    >
       <CardActionArea>
-        <CardMedia
+        {/* <CardMedia
           component="img"
           height="100"
-          image={logo}
+          image={temp}
           alt="green iguana"
-        />
-        \{" "}
+        /> */}
+
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            PH
+          <img src={img} style={{ height: "50px", marginBottom: "10px" }} />
+          <Typography gutterBottom variant="h6" component="div">
+            <strong>{name}</strong>
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, sed!
-            Quisquam nobis esse impedit culpa!
+          <Typography variant="h4" color="black">
+            <strong>{val}</strong>
           </Typography>
         </CardContent>
       </CardActionArea>

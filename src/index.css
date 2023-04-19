@@ -21,16 +21,26 @@ code {
 }
 
 .logo{
-  height: 2.5rem;
+  height: 3rem;
+
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 
 .navouter{
   display: flex;
   justify-content: space-between;
+  align-items:center;
   width: 100%;
   margin: 2rem;
+  padding-right: 3.75rem;
+}
+
+.navbarinner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .containerhome{
