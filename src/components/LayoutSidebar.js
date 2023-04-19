@@ -22,8 +22,9 @@ export default function LayoutSidebar() {
             // only apply styles on first level elements of the tree
             if (level === 0)
               return {
-                color: disabled ? "#000" : "#00afef",
-                backgroundColor: active ? "#000" : undefined,
+                color: disabled ? "#000" : "grey",
+                backgroundColor: active ? "#00bdd8" : undefined,
+                color: active ? "#fff" : "grey",
               };
           },
         }}
@@ -34,7 +35,11 @@ export default function LayoutSidebar() {
             collapseSidebar();
             console.log("clicked");
           }}
-          style={{ textAlign: "center" }}
+          style={{
+            textAlign: "center",
+            marginTop: "10px",
+            marginBottom: "10px",
+          }}
         >
           {" "}
           <img src={logo} className="logo" />
@@ -44,8 +49,9 @@ export default function LayoutSidebar() {
           <MenuItem
             icon={<HomeOutlinedIcon />}
             onClick={() => {
-              setstate("/home");
+              setstate("home");
             }}
+            active={selectedState === "home" ? true : false}
           >
             Home
           </MenuItem>
@@ -55,8 +61,9 @@ export default function LayoutSidebar() {
           <MenuItem
             icon={<PeopleOutlinedIcon />}
             onClick={() => {
-              setstate("/inboxm");
+              setstate("inbox");
             }}
+            active={selectedState === "inbox" ? true : false}
           >
             Inbox
           </MenuItem>
@@ -68,6 +75,7 @@ export default function LayoutSidebar() {
             onClick={() => {
               setstate("board");
             }}
+            active={selectedState === "board" ? true : false}
           >
             board
           </MenuItem>
@@ -79,6 +87,7 @@ export default function LayoutSidebar() {
             onClick={() => {
               setstate("settings");
             }}
+            active={selectedState === "settings" ? true : false}
           >
             Settings
           </MenuItem>
@@ -90,6 +99,7 @@ export default function LayoutSidebar() {
             onClick={() => {
               setstate("faq");
             }}
+            active={selectedState === "faq" ? true : false}
           >
             FAQ
           </MenuItem>
