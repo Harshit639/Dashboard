@@ -11,6 +11,7 @@ import { bardata, piedata } from "../components/data";
 
 import { Row, Col } from "react-bootstrap";
 import useWindowDimensions from "../components/DimensionHook";
+import { minWidth } from "@mui/system";
 
 export default function Home() {
   const { height, width } = useWindowDimensions();
@@ -18,7 +19,7 @@ export default function Home() {
   return (
     <div>
       <div className="containerhome">
-        <Row className="align-items-center" style={{ marginLeft: 0 }}>
+        <Row className="align-items-center" style={{ marginLeft: -5 }}>
           <Col xs={12} md={6} xl={4} className="align-items-center carditem">
             <ReportCard
               name="Temperature"
@@ -42,11 +43,16 @@ export default function Home() {
       </div>
       <div className="charts">
         <Row className="aligh-items-center">
-          <Col xs={12} md={6} xl={8}>
+          <Col
+            xs={12}
+            md={6}
+            xl={8}
+            style={{ marginLeft: -5, marginBottom: -500 }}
+          >
             <div
               style={{
-                height: width > 600 ? 425 : 340,
-                width: width > 600 ? 850 : 460,
+                height: width > 600 ? 425 : 300,
+                width: width > 600 ? 850 : 400,
               }}
             >
               <MyResponsiveBar data={bardata} />
@@ -56,8 +62,8 @@ export default function Home() {
           <Col xs={12} md={6} xl={4}>
             <div
               style={{
-                height: width > 600 ? 425 : 400,
-                width: width > 600 ? 380 : 350,
+                height: width > 600 ? 425 : 350,
+                width: width > 600 ? 380 : 280,
               }}
             >
               <MyResponsivePie data={piedata} />

@@ -11,7 +11,7 @@ export default function ReportCard({ name, val, img, col }) {
     <Card
       sx={{
         maxWidth: 350,
-        minWidth: 300,
+        minWidth: 230,
         minHeight: 200,
         backgroundColor: col,
       }}
