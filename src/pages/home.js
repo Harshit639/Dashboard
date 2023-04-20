@@ -43,12 +43,7 @@ export default function Home() {
       </div>
       <div className="charts">
         <Row className="aligh-items-center">
-          <Col
-            xs={12}
-            md={6}
-            xl={8}
-            style={{ marginLeft: -5, marginBottom: -500 }}
-          >
+          <Col xs={12} md={6} xl={8} style={{ marginLeft: -5 }}>
             <div
               style={{
                 height: width > 600 ? 425 : 300,
@@ -62,8 +57,8 @@ export default function Home() {
           <Col xs={12} md={6} xl={4}>
             <div
               style={{
-                height: width > 600 ? 425 : 350,
-                width: width > 600 ? 380 : 280,
+                height: width > 600 ? 425 : 370,
+                width: width > 600 ? 380 : 300,
               }}
             >
               <MyResponsivePie data={piedata} />
