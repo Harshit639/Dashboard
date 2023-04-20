@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
   overflow: hidden;
-  padding-right: 3rem;
+
 }
 
 
@@ -44,7 +44,22 @@ code {
 }
 
 .containerhome{
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* justify-content:space-between; */
+
+
+
+}
+
+.charts{
   display: flex;
-  justify-content: space-around;
+  /* background-color: black; */
+  height: 100vh;
+  
+}
+
+.carditem{
+  margin-bottom: 1rem;
 }
 
