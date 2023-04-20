@@ -15,7 +15,7 @@ export default function LayoutSidebar() {
   const [selectedState, setstate] = useState("home");
 
   return (
-    <Sidebar style={{ height: "100vh" }}>
+    <Sidebar style={{ height: "100vh" }} defaultCollapsed={true}>
       <Menu
         menuItemStyles={{
           button: ({ level, active, disabled }) => {

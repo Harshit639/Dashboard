@@ -1,6 +1,11 @@
 import "./App.css";
 import LayoutSidebar from "./components/LayoutSidebar";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Settings from "./pages/Settings";
 import Faq from "./pages/Faq";
 import Inbox from "./pages/Inbox";
@@ -15,6 +20,7 @@ function App() {
         <div className="container">
           <Navbar />
           <Routes>
+            <Route path="/" element={<Navigate to="/home" />}></Route>
             <Route path="/home" element={<Home />} />
             <Route path="/Inbox" element={<Inbox />} />
             <Route path="/board" component={<Board />} />
