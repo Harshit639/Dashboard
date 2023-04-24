@@ -8,8 +8,15 @@ import { ResponsiveBar } from "@nivo/bar";
 const MyResponsiveBar = ({ data }) => (
   <ResponsiveBar
     data={data}
-    keys={["hot dog", "burger", "sandwich", "kebab", "fries", "donut"]}
-    indexBy="country"
+    keys={[
+      "Chemical A",
+      "Chemical B",
+      "Chemical C",
+      "Chemical D",
+      "Chemical E",
+      "Chemical F",
+    ]}
+    indexBy="Days"
     margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
     padding={0.3}
     valueScale={{ type: "linear" }}
@@ -38,13 +45,13 @@ const MyResponsiveBar = ({ data }) => (
     fill={[
       {
         match: {
-          id: "fries",
+          id: "Chemical E",
         },
         id: "dots",
       },
       {
         match: {
-          id: "sandwich",
+          id: "Chemical C",
         },
         id: "lines",
       },
@@ -59,7 +66,7 @@ const MyResponsiveBar = ({ data }) => (
       tickSize: 5,
       tickPadding: 5,
       tickRotation: 0,
-      legend: "country",
+      legend: "Weekly Analysis",
       legendPosition: "middle",
       legendOffset: 32,
     }}
@@ -67,7 +74,7 @@ const MyResponsiveBar = ({ data }) => (
       tickSize: 5,
       tickPadding: 5,
       tickRotation: 0,
-      legend: "food",
+      legend: "Chemicals",
       legendPosition: "middle",
       legendOffset: -40,
     }}
@@ -104,7 +111,9 @@ const MyResponsiveBar = ({ data }) => (
     role="application"
     ariaLabel="Nivo bar chart demo"
     barAriaLabel={function (e) {
-      return e.id + ": " + e.formattedValue + " in country: " + e.indexValue;
+      return (
+        e.id + ": " + e.formattedValue + " in Weekly Analysis: " + e.indexValue
+      );
     }}
   />
 );
