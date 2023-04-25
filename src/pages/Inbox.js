@@ -15,7 +15,7 @@ export default function Inbox() {
   const height = 1000;
 
   useEffect(() => {
-    const client = new Paho.Client("reflow.online", Number(9001), "/", "ws");
+    const client = new Paho.Client("reflow.online", Number(9001), "/", "wss");
     client.connect({
       onSuccess: function () {
         console.log("connected");
