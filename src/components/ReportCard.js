@@ -16,24 +16,23 @@ export default function ReportCard({ name, val, img, col }) {
         backgroundColor: col,
       }}
     >
-      <CardActionArea>
-        {/* <CardMedia
+      {/* <CardMedia
           component="img"
           height="100"
           image={temp}
           alt="green iguana"
         /> */}
 
-        <CardContent>
-          <img src={img} style={{ height: "50px", marginBottom: "10px" }} />
-          <Typography gutterBottom variant="h6" component="div">
-            <strong>{name}</strong>
-          </Typography>
-          <Typography variant="h4" color="black">
-            <strong>{val}</strong>
-          </Typography>
-        </CardContent>
-      </CardActionArea>
+      <CardContent>
+        <img src={img} style={{ height: "50px", marginBottom: "10px" }} />
+        <Typography gutterBottom variant="h6" component="div">
+          <strong>{name}</strong>
+        </Typography>
+        <Typography variant="h4" color="black">
+          <strong>{val}</strong>
+        </Typography>
+      </CardContent>
+
       {/* <CardActions>
         <Button size="small" color="primary">
           Share
