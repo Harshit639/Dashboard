@@ -44,16 +44,16 @@ export default function Inbox() {
           )}
         </Spring>
         <div className="boxes">
-          <div>Teperature</div>
-          <div>Pressure</div>
-          <div>Density</div>
-          <div>Volume</div>
+          <div className="innerbox">Teperature</div>
+          <div className="innerbox">Pressure</div>
+          <div className="innerbox">Density</div>
+          <div className="innerbox">Volume</div>
         </div>
         <div className="boxes">
-          <div>16 C</div>
-          <div>2 Psi</div>
-          <div></div>
-          <div></div>
+          <div className="innerbox">16 C</div>
+          <div className="innerbox">2 Psi</div>
+          <div className="innerbox">" "</div>
+          <div className="innerbox">" "</div>
         </div>
       </div>
     </>
