@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Spring } from "react-spring";
-import logoo from "../assets/thislogo.png";
+import tank1 from "../assets/tank1.jpg";
+import tank2 from "../assets/tank2.jpg";
+import tank3 from "../assets/tank3.jpg";
+import tank4 from "../assets/tank4.jpg";
 
 export default function Inbox() {
   const maxValue = 100;
@@ -9,31 +12,13 @@ export default function Inbox() {
   return (
     <>
       <div className="devices">
-        <img src={logoo} alt="" srcset="" style={{ height: "3.5rem" }} />
-        <Spring from={{ percent: 0 }} to={{ percent: maxValue }}>
-          {({ percent }) => (
-            <div className="progress vertical">
-              <div style={{ height: progress }} className="progress-bar">
-                <span className="sr-only">{`${progress}%`}</span>
-              </div>
-            </div>
-          )}
-        </Spring>
-      </div>
-      <div className="devices">
-        <img src={logoo} alt="" srcset="" style={{ height: "3.5rem" }} />
-        <Spring from={{ percent: 0 }} to={{ percent: maxValue }}>
-          {({ percent }) => (
-            <div className="progress vertical">
-              <div style={{ height: progress }} className="progress-bar">
-                <span className="sr-only">{`${progress}%`}</span>
-              </div>
-            </div>
-          )}
-        </Spring>
-      </div>
-      <div className="devices">
-        <img src={logoo} alt="" srcset="" style={{ height: "3.5rem" }} />
+        <img
+          src={tank1}
+          alt=""
+          srcset=""
+          style={{ height: "12rem", borderRadius: "5px" }}
+          className="devicesInner"
+        />
         <Spring from={{ percent: 0 }} to={{ percent: maxValue }}>
           {({ percent }) => (
             <div className="progress vertical">
@@ -52,8 +37,98 @@ export default function Inbox() {
         <div className="boxes">
           <div className="innerbox">16 C</div>
           <div className="innerbox">2 Psi</div>
-          <div className="innerbox">" "</div>
-          <div className="innerbox">" "</div>
+          <div className="innerbox">.</div>
+          <div className="innerbox">.</div>
+        </div>
+      </div>
+      <div className="devices">
+        <img
+          src={tank2}
+          alt=""
+          srcset=""
+          style={{ height: "12rem", borderRadius: "5px" }}
+          className="devicesInner"
+        />
+        <Spring from={{ percent: 0 }} to={{ percent: maxValue }}>
+          {({ percent }) => (
+            <div className="progress vertical">
+              <div style={{ height: progress }} className="progress-bar">
+                <span className="sr-only">{`${progress}%`}</span>
+              </div>
+            </div>
+          )}
+        </Spring>
+        <div className="boxes">
+          <div className="innerbox">Teperature</div>
+          <div className="innerbox">Pressure</div>
+          <div className="innerbox">Density</div>
+          <div className="innerbox">Volume</div>
+        </div>
+        <div className="boxes">
+          <div className="innerbox">16 C</div>
+          <div className="innerbox">2 Psi</div>
+          <div className="innerbox">.</div>
+          <div className="innerbox">.</div>
+        </div>
+      </div>
+      <div className="devices">
+        <img
+          src={tank3}
+          alt=""
+          srcset=""
+          style={{ height: "12rem", borderRadius: "5px" }}
+          className="devicesInner"
+        />
+        <Spring from={{ percent: 0 }} to={{ percent: maxValue }}>
+          {({ percent }) => (
+            <div className="progress vertical">
+              <div style={{ height: progress }} className="progress-bar">
+                <span className="sr-only">{`${progress}%`}</span>
+              </div>
+            </div>
+          )}
+        </Spring>
+        <div className="boxes">
+          <div className="innerbox">Teperature</div>
+          <div className="innerbox">Pressure</div>
+          <div className="innerbox">Density</div>
+          <div className="innerbox">Volume</div>
+        </div>
+        <div className="boxes">
+          <div className="innerbox">16 C</div>
+          <div className="innerbox">2 Psi</div>
+          <div className="innerbox">.</div>
+          <div className="innerbox">.</div>
+        </div>
+      </div>
+      <div className="devices">
+        <img
+          src={tank4}
+          alt=""
+          srcset=""
+          style={{ height: "12rem", borderRadius: "5px" }}
+          className="devicesInner"
+        />
+        <Spring from={{ percent: 0 }} to={{ percent: maxValue }}>
+          {({ percent }) => (
+            <div className="progress vertical">
+              <div style={{ height: progress }} className="progress-bar">
+                <span className="sr-only">{`${progress}%`}</span>
+              </div>
+            </div>
+          )}
+        </Spring>
+        <div className="boxes">
+          <div className="innerbox">Teperature</div>
+          <div className="innerbox">Pressure</div>
+          <div className="innerbox">Density</div>
+          <div className="innerbox">Volume</div>
+        </div>
+        <div className="boxes">
+          <div className="innerbox">16 C</div>
+          <div className="innerbox">2 Psi</div>
+          <div className="innerbox">.</div>
+          <div className="innerbox">.</div>
         </div>
       </div>
     </>
