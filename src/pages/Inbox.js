@@ -19,6 +19,10 @@ export default function Inbox() {
           style={{ height: "12rem", borderRadius: "5px" }}
           className="devicesInner"
         />
+        <div style={{ padding: "2rem" }}>
+          <h3>TANK 1</h3>
+          <p>Location: Chennai</p>
+        </div>
         <Spring from={{ percent: 0 }} to={{ percent: maxValue }}>
           {({ percent }) => (
             <div className="progress vertical">
@@ -49,6 +53,10 @@ export default function Inbox() {
           style={{ height: "12rem", borderRadius: "5px" }}
           className="devicesInner"
         />
+        <div style={{ padding: "2rem" }}>
+          <h3>TANK 2</h3>
+          <p>Location: Chennai</p>
+        </div>
         <Spring from={{ percent: 0 }} to={{ percent: maxValue }}>
           {({ percent }) => (
             <div className="progress vertical">
@@ -79,6 +87,10 @@ export default function Inbox() {
           style={{ height: "12rem", borderRadius: "5px" }}
           className="devicesInner"
         />
+        <div style={{ padding: "2rem" }}>
+          <h3>TANK 3</h3>
+          <p>Location: Chennai</p>
+        </div>
         <Spring from={{ percent: 0 }} to={{ percent: maxValue }}>
           {({ percent }) => (
             <div className="progress vertical">
@@ -109,6 +121,10 @@ export default function Inbox() {
           style={{ height: "12rem", borderRadius: "5px" }}
           className="devicesInner"
         />
+        <div style={{ padding: "2rem" }}>
+          <h3>TANK 4</h3>
+          <p>Location: Chennai</p>
+        </div>
         <Spring from={{ percent: 0 }} to={{ percent: maxValue }}>
           {({ percent }) => (
             <div className="progress vertical">
