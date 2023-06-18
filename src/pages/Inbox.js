@@ -23,7 +23,12 @@ export default function Inbox() {
   const [radiustank, setradiustank] = useState(0);
 
   useEffect(() => {
-    const client = new Paho.Client("44.216.131.70", Number(9001), "/", "wss");
+    const client = new Paho.Client(
+      "alphasense.online",
+      Number(8883),
+      "/",
+      "wss"
+    );
     client.connect({
       onSuccess: function () {
         console.log("connected");
@@ -48,7 +53,7 @@ export default function Inbox() {
           );
         };
       },
-      userName: "chemreflow3",
+      userName: "alphasense",
       password: "chemreflow",
       useSSL: false,
       onFailure: function () {

@@ -23,7 +23,12 @@ export default function Settings() {
   const [radiustank, setradiustank] = useState(0);
 
   useEffect(() => {
-    const client = new Paho.Client("reflow.online", Number(9001), "/", "wss");
+    const client = new Paho.Client(
+      "alphasense.online",
+      Number(8883),
+      "/",
+      "wss"
+    );
     client.connect({
       onSuccess: function () {
         console.log("connected");
@@ -48,8 +53,8 @@ export default function Settings() {
           );
         };
       },
-      userName: "nuclear",
-      password: "netquantity",
+      userName: "alphasense",
+      password: "chemreflow",
       useSSL: false,
       onFailure: function () {
         console.log("not connected");
