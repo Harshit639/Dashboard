@@ -23,7 +23,7 @@ export default function Inbox() {
   const [radiustank, setradiustank] = useState(0);
 
   useEffect(() => {
-    const client = new Paho.Client("reflow.online", Number(9001), "/", "wss");
+    const client = new Paho.Client("44.216.131.70", Number(9001), "/", "wss");
     client.connect({
       onSuccess: function () {
         console.log("connected");
@@ -48,8 +48,8 @@ export default function Inbox() {
           );
         };
       },
-      userName: "nuclear",
-      password: "netquantity",
+      userName: "chemreflow3",
+      password: "chemreflow",
       useSSL: false,
       onFailure: function () {
         console.log("not connected");

@@ -68,7 +68,7 @@ export default function LayoutSidebar() {
             }}
             active={selectedState === "inbox" ? true : false}
           >
-            Inbox
+            Vertical Tanks
           </MenuItem>
         </Link>
 
@@ -80,7 +80,7 @@ export default function LayoutSidebar() {
             }}
             active={selectedState === "settings" ? true : false}
           >
-            Settings
+            Horizontal Tanks
           </MenuItem>
         </Link>
 
