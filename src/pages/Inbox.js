@@ -6,17 +6,21 @@ import mqtt from "mqtt/dist/mqtt";
 import Paho from "paho-mqtt";
 import { Spring } from "react-spring";
 import { Button } from "react-bootstrap";
+import { width } from "@mui/system";
 
 export default function Inbox() {
   const [value, setvalue] = useState(50);
   const startColor = "#6495ed"; // cornflowerblue
   const endColor = "#dc143c";
-  const radius = 200;
+  const radius = 150;
   const interpolate = interpolateRgb(startColor, endColor);
+  const [heightstorage, setheightstorage] = useState(0);
   const fillColor = interpolate(value / 100);
-  const height = 1000;
+  const [height, setheight] = useState(0);
   const maxValue = 100;
   const [progress, setprogress] = useState(10);
+  const [volume, setvolume] = useState(0);
+  const [radiustank, setradiustank] = useState(0);
 
   useEffect(() => {
     const client = new Paho.Client("reflow.online", Number(9001), "/", "wss");
@@ -30,7 +34,12 @@ export default function Inbox() {
           //     ((height - parseInt(message.payloadString)) / height) * 100
           //   )
           // );
+          console.log(height);
           setvalue(((height - parseInt(message.payloadString)) / height) * 100);
+          setvolume(
+            3.14 * radius * radius * (height - parseInt(message.payloadString))
+          );
+
           console.log(
             "Topic: " +
               message.destinationName +
@@ -46,36 +55,7 @@ export default function Inbox() {
         console.log("not connected");
       },
     });
-  }, []);
-
-  // useEffect(() => {
-  //   var client = mqtt.connect("ws://reflow.online", {
-  //     port: 9001,
-  //     username: "nuclear",
-  //     password: "netquantity",
-  //   });
-
-  //   client.on("connect", function () {
-  //     console.log("connected");
-  //     client.subscribe("test12", function (err) {
-  //       if (!err) {
-  //         // client.publish(
-  //         //   "test12",
-  //         //   JSON.stringify({
-  //         //     content: "Hello welcome :)",
-  //         //   })
-  //         // );
-  //       }
-  //     });
-
-  //   });
-
-  //   client.on("message", function (topic, message) {
-  //     // message is Buffer
-  //     console.log(message.toString());
-  //     client.end();
-  //   });
-  // });
+  }, [height, radiustank]);
 
   const gradientStops = [
     {
@@ -98,10 +78,33 @@ export default function Inbox() {
     },
   ];
 
+  const handleChange = (e) => {
+    console.log(e);
+    // this.setState({ inputValue: e.target.value });
+    // this.props.onChange(e);
+    setheight(e.target.value);
+  };
+
+  const handleradius = (e) => {
+    console.log(e);
+    // this.setState({ inputValue: e.target.value });
+    // this.props.onChange(e);
+    setradiustank(e.target.value);
+  };
   return (
-    <div>
+    <div
+      style={{
+        padding: "20px",
+        boxShadow: "0px 0px 2px 2px black",
+        width: "500px",
+        alignItems: "center",
+        justifyContent: "center",
+        paddingLeft: "100px",
+      }}
+    >
+      <h2 style={{ marginLeft: "60px" }}>Vertical Tank</h2>
       <LiquidFillGauge
-        style={{ margin: "0 auto" }}
+        style={{ margin: "0 0" }}
         width={radius * 2}
         height={radius * 2}
         value={value}
@@ -153,29 +156,53 @@ export default function Inbox() {
           setvalue(Math.random() * 100);
         }}
       />
-      <Spring from={{ percent: 0 }} to={{ percent: maxValue }}>
-        {({ percent }) => (
-          <div className="progress vertical">
-            <div style={{ height: progress }} className="progress-bar">
-              <span className="sr-only">{`${progress}%`}</span>
-            </div>
+
+      <div>
+        <div style={{ marginTop: "35px" }}>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <h4>Height of the Tank?</h4>
+            <input
+              type="text"
+              style={{
+                height: "27px",
+                width: "35px",
+                marginLeft: "20px",
+              }}
+              onChange={handleChange}
+              value={height}
+            />
           </div>
-        )}
-      </Spring>
-      <Button onClick={() => setprogress(20)}></Button>
-      <div
-        style={{
-          margin: "20px auto",
-          width: 120,
-        }}
-      >
-        <button
-          type="button"
-          className="btn btn-default btn-block"
-          onClick={() => {
-            setvalue(Math.random() * 100);
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <h4>Radius of the Tank?</h4>
+            <input
+              type="text"
+              style={{
+                height: "27px",
+                width: "35px",
+                marginLeft: "20px",
+              }}
+              onChange={handleradius}
+              value={radiustank}
+            />
+          </div>
+        </div>
+        {/* <Button
+          style={{
+            marginTop: "20px",
+            marginBottom: "20px",
+            height: "50px",
+            width: "100px",
           }}
-        ></button>
+          onClick={() => {
+            console.log(heightstorage);
+            setheight(heightstorage);
+            console.log("dvfdv" + height);
+          }}
+        >
+          Submit
+        </Button> */}
+
+        <h4>Volume Filled: {volume}</h4>
       </div>
     </div>
   );

@@ -6,14 +6,17 @@ import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+import LogoutIcon from "@mui/icons-material/Logout";
 import logo from "../assets/thislogo.png";
 import "../index.css";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { getAuth, signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 export default function LayoutSidebar() {
   const { collapseSidebar } = useProSidebar();
   const [selectedState, setstate] = useState("home");
-
+  let navigate = useNavigate();
   return (
     <Sidebar style={{ height: "100vh" }} defaultCollapsed={true}>
       <Menu
@@ -69,18 +72,6 @@ export default function LayoutSidebar() {
           </MenuItem>
         </Link>
 
-        <Link to="/board">
-          <MenuItem
-            icon={<ContactsOutlinedIcon />}
-            onClick={() => {
-              setstate("board");
-            }}
-            active={selectedState === "board" ? true : false}
-          >
-            board
-          </MenuItem>
-        </Link>
-
         <Link to="/settings">
           <MenuItem
             icon={<ReceiptOutlinedIcon />}
@@ -90,6 +81,18 @@ export default function LayoutSidebar() {
             active={selectedState === "settings" ? true : false}
           >
             Settings
+          </MenuItem>
+        </Link>
+
+        <Link to="/board">
+          <MenuItem
+            icon={<ContactsOutlinedIcon />}
+            onClick={() => {
+              setstate("board");
+            }}
+            active={selectedState === "board" ? true : false}
+          >
+            board
           </MenuItem>
         </Link>
 
@@ -104,6 +107,23 @@ export default function LayoutSidebar() {
             FAQ
           </MenuItem>
         </Link>
+
+        <MenuItem
+          icon={<LogoutIcon />}
+          onClick={() => {
+            setstate("logout");
+            const auth = getAuth();
+            signOut(auth)
+              .then(() => {
+                window.location.reload();
+                navigate("/");
+              })
+              .catch((error) => {});
+          }}
+          active={selectedState === "logout" ? true : false}
+        >
+          LogOut
+        </MenuItem>
       </Menu>
     </Sidebar>
   );
